@@ -47,7 +47,6 @@ export default {
     '@nuxt/postcss8',
     '@nuxt/image',
     '@nuxtjs/axios',
-    '@nuxtjs/device',
     '@nuxtjs/moment',
     '@nuxtjs/google-analytics',
     '@nuxtjs/color-mode'
@@ -144,8 +143,13 @@ export default {
     'vue-social-sharing/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/device',
     '@nuxtjs/proxy'
   ],
+  device: {
+    defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36',
+    refreshOnResize: true
+  },
   colorMode: {
     classSuffix: ''
   },

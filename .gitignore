@@ -4,6 +4,7 @@ node_modules/
 # Ignore Nuxt.js build directory
 .nuxt/
 
+dist/
 # Ignore development server files
 .nuxt-*
 

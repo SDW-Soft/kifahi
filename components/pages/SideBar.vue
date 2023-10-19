@@ -47,7 +47,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <nuxt-link to="/home" class="nav-link">
+            <nuxt-link to="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt" />
               {{ $t("Dashboard") }}</nuxt-link
             >
@@ -65,19 +65,19 @@
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Déblocaque") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Paramétrage") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Nom de serveur") }}</nuxt-link
                 >
@@ -220,32 +220,32 @@
               </li>
               <hr>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Preparation des dépots") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Impression Décomptes") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Impression Bordereau") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Deverrouiller bordereau") }}</nuxt-link
                 >
               </li>
               <hr>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Maj des Actes MGT") }}</nuxt-link
                 >
@@ -259,19 +259,19 @@
             </a>
             <ul class="nav nav-treeview" style="display: none">
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Gestion des relances et radiations") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Radiations FSD") }}</nuxt-link
                 >
               </li>
               <li class="nav-item">
-                <nuxt-link to="/home" class="nav-link">
+                <nuxt-link to="/" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt" />
                   {{ $t("Liste adhérent relancés et radiés") }}</nuxt-link
                 >

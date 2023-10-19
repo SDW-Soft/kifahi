@@ -19,7 +19,7 @@
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <nuxt-link
-            to="/home"
+            to="/"
             class="nav-link h-10 flex gap-2 px-4 bg-success10000 text-white rounded"
           >
             <svg
@@ -71,7 +71,7 @@
       </div>
       <nuxt-link
         :class="{ 'pt-3 mr-3': $device.isMobile }"
-        to="/home"
+        to="/"
         class="flex gap-2 font-alex"
       >
         <div class="w-10 h-10 logo text-white text-2xl text-center rounded">
@@ -82,32 +82,32 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav flex gap-4 w-2/4 mr-5" v-if="!$device.isMobile">
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> الرئيسية</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> الرئيسية</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> شارك معنا</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> شارك معنا</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> أبلغ عن أخطاء</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> أبلغ عن أخطاء</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> اتصل بنا</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> اتصل بنا</nuxt-link>
         </li>
       </ul>
     </nav>
     <div class="w-full pb-6" v-if="$device.isMobile && isSidebarOpen">
       <ul class="navbar-nav grid gap-6 w-full text-center text-black400">
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> الرئيسية</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> الرئيسية</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> شارك معنا</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> شارك معنا</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> أبلغ عن أخطاء</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> أبلغ عن أخطاء</nuxt-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <nuxt-link to="/home" class="font-alex"> اتصل بنا</nuxt-link>
+          <nuxt-link to="/" class="font-alex"> اتصل بنا</nuxt-link>
         </li>
       </ul>
       <div class="m-auto w-1/4">
@@ -124,7 +124,7 @@
       <hr class="my-8" />
       <div class="w-5/12 m-auto mb-4">
         <nuxt-link
-          to="/home"
+          to="/"
           class="nav-link h-10 flex gap-2 px-4 bg-success10000 text-white rounded"
         >
           <svg
