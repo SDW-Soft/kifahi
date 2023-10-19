@@ -2,9 +2,9 @@
   <div class="">
     <div class="h-screen w-4/5 m-auto">
       <div class="welcome_containe">
-        <div class="mt-12 m-auto lg:w-8/12 sm:w-11/12 welcoming">
+        <div class="mt-12 m-auto lg:w-9/12 sm:w-11/12 welcoming">
           <div
-            class="texting flex gap-1 font-alex lg:text-5xl font-weight-bold sm:text-lg"
+            class="texting flex gap-1 font-alex lg:text-5xl font-weight-bold sm:text-lg m-auto w-10/12"
             dir="rtl"
           >
             <span class="text-success400">أنصر</span>
