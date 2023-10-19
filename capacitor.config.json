@@ -1,0 +1,8 @@
+{
+  "appId": "com.kifahi.app",
+  "appName": "kifahi",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

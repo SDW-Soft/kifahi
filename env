@@ -1,0 +1,16 @@
+TITLE=Kifahi
+API=https://api.kifahi.com/
+BASE_URL=https://localhost:3000
+SITE_URL=https://api.kifahi.com/
+API_URL=https://localhost:3001
+I18N_LOCALE=en
+I18N_FALLBACK_LOCALE=en
+I18N_SUPPORTED_LOCALE=en,ar
+IS_ELECTRON=false
+PORT=3000
+EXPRESS=3001
+MODE_ENV=development
+APP_DEBUG=false
+BITWAVE_ENV=production
+WORKBOX_DEBUG=true
+GOOGLE=G-1J0NP3PJ3X
