@@ -234,14 +234,15 @@
           </div>
         </div>
       </div>
-      <p class="text-center font-alex text-xl mt-8">#لاتحزن_أنت_في_حرب</p>
+      <p class="text-center font-alex text-xl my-12">#لاتحزن_أنت_في_حرب</p>
     </div>
   </div>
 </template>
 <script>
 import { hashTextToUser } from "~/plugins/hash.js";
-import MobileDetect from 'mobile-detect';
+import MobileDetect from "mobile-detect";
 import axios from "axios";
+
 export default {
   name: "admins",
   layout: "adminLte",
@@ -279,11 +280,15 @@ export default {
       isMobile: false,
       isTablet: false,
       isDesktop: false,
+      // originalText: "This is a sample sentence for rephrasing.",
+      // rephrasedText: null
     };
   },
   async mounted() {
     if (!process.client) return;
     this.fetchDeviceType();
+    // this.rephrasedText = hashTextToUser('en',this.originalText);
+    // console.log(this.rephrasedText)
     try {
       const response = await axios.get(
         "http://localhost:3001/api/visitor-count"
@@ -296,7 +301,12 @@ export default {
   methods: {
     async hashString() {
       if (this.text != null) {
-        this.converted = hashTextToUser(this.algo, this.text);
+        let ln = this.detectLanguage(this.text);
+        // console.log(ln);
+        // return this.text
+        if (ln == "ar" || ln == "en")
+          this.converted = hashTextToUser(ln, this.algo, this.text);
+        else this.converted = this.text;
         if (this.converted.length > 0) {
           this.converted += " #دافع_عن_ارضك ";
           try {
@@ -308,6 +318,18 @@ export default {
             this.actionCount = 0;
           }
         }
+      }
+    },
+    detectLanguage(inputString) {
+      const arabicPattern = /[\u0600-\u06FF]/;
+      const latinPattern = /[a-zA-Z]/;
+
+      if (arabicPattern.test(inputString)) {
+        return "ar";
+      } else if (latinPattern.test(inputString)) {
+        return "en";
+      } else {
+        return "Unknown";
       }
     },
     fetchDeviceType() {
