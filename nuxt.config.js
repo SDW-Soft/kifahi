@@ -40,6 +40,7 @@ export default {
   plugins: [
     { src: '~/plugins/main.js', mode: 'client', },
     { src: '~/plugins/hash.js', mode: 'client', },
+    { src: '~/plugins/deviceDetect.js', ssr: true },
   ],
   components: true,
   buildModules: [

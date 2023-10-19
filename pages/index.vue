@@ -4,7 +4,7 @@
       <div class="welcome_containe">
         <div class="mt-12 m-auto lg:w-8/12 sm:w-11/12 welcoming">
           <div
-            class="texting flex gap-2 font-alex lg:text-5xl font-weight-bold sm:text-lg"
+            class="texting flex gap-1 font-alex lg:text-5xl font-weight-bold sm:text-lg"
             dir="rtl"
           >
             <span class="text-success400">أنصر</span>
@@ -12,8 +12,8 @@
             <div class="palestine lg:mr-4 sm:mr-1">
               <svg
                 :class="{
-                  'w-6 h-16': !$device.isMobile,
-                  'w-6 h-8': $device.isMobile,
+                  'w-6 h-16': !isMobile,
+                  'w-6 h-8': isMobile,
                 }"
                 viewBox="0 0 23 70"
                 fill="none"
@@ -39,7 +39,7 @@
             </div>
             <span>رضك</span>
             <img
-              :class="{ image: !$device.isMobile, imagesm: $device.isMobile }"
+              :class="{ image: !isMobile, imagesm: isMobile }"
               class="mt-1 w-20 h-10"
               src="~/assets/images/flag.png"
               alt=""
@@ -48,13 +48,13 @@
         </div>
         <p
           class="text-center text-purple font-alex mt-4"
-          :class="{ textsm: $device.isMobile }"
+          :class="{ textsm: isMobile }"
         >
           منصة لإنشاء هاشتاج واعادة صياغة المنشورات بطريقة لاتتبعها خوارزميات
           السوشل ميديا نصرة لإخواننا في فلسطين ودعم قضية المسلمين.
         </p>
       </div>
-      <div class="hashtag mt-24 w-8/12 m-auto" v-if="!$device.isMobile">
+      <div class="hashtag mt-24 w-8/12 m-auto" v-if="!isMobile">
         <div class="hashtag_container flex h-16 w-full p-2 bg-white">
           <div class="selection w-3/12">
             <select
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div
-        :class="{ statistics: $device.isMobile }"
+        :class="{ statistics: isMobile }"
         class="m-auto grid sm:gap-16 sm:grid-cols-1 lg:grid-cols-3 w-10/12 mt-24 lg:gap-x-4"
       >
         <div class="item">
@@ -133,9 +133,9 @@
             <p class="font-inter text-xl text-gray-400">01</p>
             <p class="font-montserrat">أكثر هاشتاج يتم استعماله في المنصة</p>
           </div>
-          <div class="flex gap-1 w-9/12 lg:float-left mt-4">
+          <div class="flex gap-1 w-10/12 lg:float-left mt-4">
             <div
-              class="w-8/12 h-6 bg-success900 text-white font-pop text-xs p-1 rounded-full"
+              class="w-9/12 h-6 bg-success900 text-white font-pop text-xs p-1 rounded-full"
             >
               #Stand_with_palestine
             </div>
@@ -240,6 +240,7 @@
 </template>
 <script>
 import { hashTextToUser } from "~/plugins/hash.js";
+import MobileDetect from 'mobile-detect';
 import axios from "axios";
 export default {
   name: "admins",
@@ -275,10 +276,14 @@ export default {
       actionCount: 0,
       text: null,
       converted: null,
+      isMobile: false,
+      isTablet: false,
+      isDesktop: false,
     };
   },
   async mounted() {
     if (!process.client) return;
+    this.fetchDeviceType();
     try {
       const response = await axios.get(
         "http://localhost:3001/api/visitor-count"
@@ -304,6 +309,13 @@ export default {
           }
         }
       }
+    },
+    fetchDeviceType() {
+      const userAgent = navigator.userAgent;
+      const md = new MobileDetect(userAgent);
+      this.isMobile = md.phone() !== null || md.mobile() === "UnknownMobile";
+      this.isTablet = md.tablet() !== null || md.mobile() === "UnknownTablet";
+      this.isDesktop = !this.isMobile && !this.isTablet;
     },
     copyToClipboard(text) {
       // Create a temporary input element

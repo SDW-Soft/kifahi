@@ -1,15 +1,9 @@
 <template>
   <!-- Navbar -->
   <div class="bg-white">
-    <nav
-      :class="{ 'pt-4 w-4/5': !$device.isMobile }"
-      class="flex relative h-16 m-auto"
-    >
+    <nav :class="{ 'py-4 w-4/5': !isMobile }" class="flex relative h-20 m-auto">
       <!-- Left navbar links -->
-      <ul
-        class="navbar-nav flex gap-4 w-1/4 absolute left-0"
-        v-if="!$device.isMobile"
-      >
+      <ul class="navbar-nav flex gap-4 w-1/4 absolute left-0" v-if="!isMobile">
         <li class="nav-item d-none d-sm-inline-block">
           <select name="" id="" class="px-4 h-8 mt-1 text-md font-alex">
             <option value="">عربية</option>
@@ -41,7 +35,7 @@
       </ul>
       <div
         class="cursor-pointer w-16 h-16 bg-blue-900 text-white"
-        v-if="$device.isMobile"
+        v-if="isMobile"
         @click="toggleSidebar"
       >
         <svg
@@ -70,17 +64,17 @@
         </svg>
       </div>
       <nuxt-link
-        :class="{ 'pt-3 mr-3': $device.isMobile }"
+        :class="{ 'pt-3 mr-3': isMobile }"
         to="/"
         class="flex gap-2 font-alex"
       >
         <div class="w-10 h-10 logo text-white text-2xl text-center rounded">
           #
         </div>
-        كفاحي
+        <p class="mt-2">كفاحي</p>
       </nuxt-link>
       <!-- Right navbar links -->
-      <ul class="navbar-nav flex gap-4 w-2/4 mr-5" v-if="!$device.isMobile">
+      <ul class="navbar-nav flex gap-4 w-2/4 mr-5 mt-2" v-if="!isMobile">
         <li class="nav-item d-none d-sm-inline-block">
           <nuxt-link to="/" class="font-alex"> الرئيسية</nuxt-link>
         </li>
@@ -95,7 +89,7 @@
         </li>
       </ul>
     </nav>
-    <div class="w-full pb-6" v-if="$device.isMobile && isSidebarOpen">
+    <div class="w-full pb-6" v-if="isMobile && isSidebarOpen">
       <ul class="navbar-nav grid gap-6 w-full text-center text-black400">
         <li class="nav-item d-none d-sm-inline-block">
           <nuxt-link to="/" class="font-alex"> الرئيسية</nuxt-link>
@@ -148,15 +142,21 @@
   <!-- /.navbar -->
 </template>
 <script>
+import MobileDetect from "mobile-detect";
 // import axios from "axios";
 export default {
   name: "IndexPage",
-  created() {},
   data() {
     return {
-      isSidebarOpen:false,
+      isSidebarOpen: false,
       display: false,
+      isMobile: false,
+      isTablet: false,
+      isDesktop: false,
     };
+  },
+  async mounted() {
+    this.fetchDeviceType();
   },
   computed: {
     availableLocales() {
@@ -164,6 +164,13 @@ export default {
     },
   },
   methods: {
+    fetchDeviceType() {
+      const userAgent = navigator.userAgent;
+      const md = new MobileDetect(userAgent);
+      this.isMobile = md.phone() !== null || md.mobile() === "UnknownMobile";
+      this.isTablet = md.tablet() !== null || md.mobile() === "UnknownTablet";
+      this.isDesktop = !this.isMobile && !this.isTablet;
+    },
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
