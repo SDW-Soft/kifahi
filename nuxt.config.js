@@ -204,7 +204,7 @@ export default {
   },
   proxy: {
     '/api/': {
-      target: process.env.API_URL,
+      target: 'https://localhost:3001',
       pathRewrite: { '^/api/': '' }, 
       changeOrigin: true, 
     },
