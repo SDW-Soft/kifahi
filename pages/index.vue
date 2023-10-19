@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-      <div class="hashtag mt-24 w-10/12 m-auto" v-else>
+      <div class="hashtag mt-12 w-10/12 m-auto" v-else>
         <div class="hashtag_container grid h-auto w-full p-2 bg-white">
           <div class="selection w-full">
             <select
@@ -121,6 +121,43 @@
             >
               # توليد مقترحات الهاشتاج
             </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="results w-full mt-16 bg-white rounded h-52 min-h-52 relative px-2"
+      >
+        <div class="lg:w-3/12 text-center sm:w-6/12 ml-auto mr-auto mt-12">
+          <p class="font-alex text-md text-black800">ستظهر نتائج العملية هنا</p>
+        </div>
+        <div class="h-36 min-h-36">
+          <article
+            style="font-family: 'Times New Roman', serif"
+            class="font-semibold"
+            v-html="converted"
+          ></article>
+        </div>
+        <div
+          class="h-8 text-center w-full rounded-md bg-black500 text-white text-alex flex gap-2"
+        >
+          <div
+            class="lg:w-2/12 sm:w-6/12 m-auto flex cursor-pointer"
+            @click="copyToClipboard(converted)"
+          >
+            <p class="text-center">نسخ النتائج كاملا</p>
+            <svg
+              class="mt-1 mr-2"
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.16653 4.49992V2.49992C5.16653 2.13173 5.46501 1.83325 5.8332 1.83325H13.8332C14.2014 1.83325 14.4999 2.13173 14.4999 2.49992V11.8333C14.4999 12.2015 14.2014 12.4999 13.8332 12.4999H11.8332V14.4993C11.8332 14.8679 11.5333 15.1666 11.162 15.1666H3.17111C2.80039 15.1666 2.5 14.8702 2.5 14.4993L2.50173 5.16717C2.5018 4.79866 2.80176 4.49992 3.17295 4.49992H5.16653ZM6.49987 4.49992H11.8332V11.1666H13.1665V3.16659H6.49987V4.49992Z"
+                fill="white"
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -197,44 +234,7 @@
           </div>
         </div>
       </div>
-      <div
-        class="results w-full mt-16 bg-white rounded h-52 min-h-52 relative px-2"
-      >
-        <div class="lg:w-3/12 text-center sm:w-6/12 ml-auto mr-auto mt-12">
-          <p class="font-alex text-md text-black800">ستظهر نتائج العملية هنا</p>
-        </div>
-        <div class="h-36 min-h-36">
-          <article
-            style="font-family: 'Times New Roman', serif"
-            class="font-semibold"
-            v-html="converted"
-          ></article>
-        </div>
-        <div
-          class="h-8 text-center w-full rounded-md bg-black500 text-white text-alex flex gap-2"
-        >
-          <div
-            class="lg:w-2/12 sm:w-6/12 m-auto flex cursor-pointer"
-            @click="copyToClipboard(converted)"
-          >
-            <p class="text-center">نسخ النتائج كاملا</p>
-            <svg
-              class="mt-1 mr-2"
-              width="17"
-              height="17"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.16653 4.49992V2.49992C5.16653 2.13173 5.46501 1.83325 5.8332 1.83325H13.8332C14.2014 1.83325 14.4999 2.13173 14.4999 2.49992V11.8333C14.4999 12.2015 14.2014 12.4999 13.8332 12.4999H11.8332V14.4993C11.8332 14.8679 11.5333 15.1666 11.162 15.1666H3.17111C2.80039 15.1666 2.5 14.8702 2.5 14.4993L2.50173 5.16717C2.5018 4.79866 2.80176 4.49992 3.17295 4.49992H5.16653ZM6.49987 4.49992H11.8332V11.1666H13.1665V3.16659H6.49987V4.49992Z"
-                fill="white"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <p class="text-center font-alex text-xl mt-4">#لاتحزن_أنت_في_حرب</p>
+      <p class="text-center font-alex text-xl mt-8">#لاتحزن_أنت_في_حرب</p>
     </div>
   </div>
 </template>
