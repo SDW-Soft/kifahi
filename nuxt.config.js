@@ -129,14 +129,7 @@ export default {
     linkActiveClass: 'bg-blue-test',
     linkExactActiveClass: 'bg-blue-test',
   },
-  googleAnalytics: {
-    id: process.env.GOOGLE
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.GOOGLE
-    }
-  },
+  gtag: { id: 'G-7H68NSCCK1' },
 
   modules: [
     '@nuxtjs/pwa',
@@ -145,6 +138,7 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
+    'nuxt-gtag',
     '@nuxtjs/proxy'
   ],
   device: {
@@ -210,8 +204,8 @@ export default {
   proxy: {
     '/api/': {
       target: 'https://localhost:3001',
-      pathRewrite: { '^/api/': '' }, 
-      changeOrigin: true, 
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true,
     },
   },
 }
