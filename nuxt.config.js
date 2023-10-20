@@ -25,6 +25,7 @@ export default {
 
     ],
     script: [
+      // { src: 'https://www.googletagmanager.com/gtag/js?id=G-7H68NSCCK1',async: true, body: true },
       { src: '/plugins/jquery/jquery.min.js', body: true },
       { src: '/plugins/jquery-ui/jquery-ui.min.js', body: true },
       { src: '/plugins/jqvmap/jquery.vmap.min.js', body: true },
@@ -38,6 +39,7 @@ export default {
   loading: { color: '#fff' },
 
   plugins: [
+    { src: '~/plugins/gtag.js', ssr: false, },
     { src: '~/plugins/main.js', mode: 'client', },
     { src: '~/plugins/hash.js', mode: 'client', },
     { src: '~/plugins/deviceDetect.js', ssr: true },
