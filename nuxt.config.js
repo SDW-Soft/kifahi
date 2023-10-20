@@ -39,7 +39,6 @@ export default {
   loading: { color: '#fff' },
 
   plugins: [
-    { src: '~/plugins/gtag.js', ssr: false, },
     { src: '~/plugins/main.js', mode: 'client', },
     { src: '~/plugins/hash.js', mode: 'client', },
     { src: '~/plugins/deviceDetect.js', ssr: true },
@@ -140,9 +139,21 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
-    'nuxt-gtag',
+    '@nuxtjs/google-gtag',
     '@nuxtjs/proxy'
   ],
+  'google-gtag': {
+    id: 'G-7H68NSCCK1',
+    config: {
+      anonymize_ip: true, // anonymize IP 
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+      linker: {
+        domains: ['domain.com','domain.org']
+      }
+    },
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false
+  },
   device: {
     defaultUserAgent: 'Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.39 Mobile Safari/537.36',
     refreshOnResize: true

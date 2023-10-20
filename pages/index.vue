@@ -286,6 +286,10 @@ export default {
   },
   async mounted() {
     if (!process.client) return;
+    // this.$nuxt.$root.$gtag('event', 'button_click', {
+    //     event_category: 'engagement',
+    //     event_label: 'custom_button_click',
+    //   })
     this.fetchDeviceType();
     // this.rephrasedText = hashTextToUser('en',this.originalText);
     // console.log(this.rephrasedText)
