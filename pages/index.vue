@@ -235,6 +235,7 @@
         </div>
       </div>
       <p class="text-center font-alex text-xl my-12">#لاتحزن_أنت_في_حرب</p>
+      <p class="text-center font-alex text-xl my-12">#كلنا_فلسطين</p>
     </div>
   </div>
 </template>
